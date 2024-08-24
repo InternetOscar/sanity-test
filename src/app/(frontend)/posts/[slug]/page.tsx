@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-// import { PortableText } from "next-sanity";
+import { PortableText } from "next-sanity";
+import { components } from "@/sanity/portableTextComponents";
 
 type PostIndexProps = { params: { slug: string } }
 
@@ -28,7 +29,11 @@ export default async function Page({ params }: PostIndexProps) {
           height="400"
         /> : null}
       <h1 className="text-4xl font-bold text-balance">{post?.title}</h1>
-
+      {post?.body ? (
+        <div className="prose">
+          <PortableText value={post?.body} components={components} />
+        </div>
+      ) : null}
       <hr />
       <Link href="/posts">&larr; Return to index</Link>
     </main>
