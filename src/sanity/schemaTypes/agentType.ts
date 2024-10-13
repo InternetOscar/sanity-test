@@ -12,6 +12,14 @@ export const agentType = defineType({
       type: "string",
     }),
     defineField({
+      name: "phone",
+      type: "string",
+    }),
+    defineField({
+      name: "email",
+      type: "string",
+    }),
+    defineField({
       name: "slug",
       type: "slug",
       options: {
