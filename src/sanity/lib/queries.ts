@@ -56,8 +56,8 @@ export const AGENTS_QUERY = defineQuery(
   _id,
   name,
   slug,
-  body,
-  mainImage,
+  bio,
+  image,
   publishedAt,
   "categories": coalesce(
     categories[]->{
